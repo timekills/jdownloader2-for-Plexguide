@@ -43,9 +43,6 @@
         - name: 'Creating new downloads location'
           command: 'mkdir -p {{path.stdout}}/downloads/{{pgrole}}'
 
-      when: oldcheck.stat.exists
-      ignore_errors: yes
-
     - name: 'Chown download folder'
       shell: 'chown -R 1000:1000 {{path.stdout}}/downloads/{{pgrole}}/'
 
@@ -74,7 +71,7 @@
           - '/opt/appdata/{{pgrole}}:/config'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/mnt/unionfs:/unionfs'
-          - '{{path.stdout}}/downloads/:/output:rw'
+          - '{{path.stdout}}/downloads/{{pgrole}}/:/output:rw'
           - '/etc/localtime:/etc/localtime:ro'
 
     - name: 'Setting PG ENV'
