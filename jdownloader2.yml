@@ -27,10 +27,6 @@
       include_tasks: '/opt/plexguide/containers/_core.yml'
 
     # MIGRATIONS (REMOVE SECTION ON MARCH 1st) #############################################################
-    - name: 'Check for old volumes'
-      stat:
-        path: '{{path.stdout}}/{{pgrole}}'
-      register: oldcheck
 
     - name: 'Migrations'
       block:
