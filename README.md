@@ -6,10 +6,11 @@ Jdownloader2 yml file for installation via Plexguide with Traefik integration
 
 #Instructions for a more automated (not copy and paste into jellyfin.yml) approach
 
-Go to the /opt/mycontainers directory (cd /opt/mycontainers)
-Type the command: git init
-Type the command: git remote add origin https://github.com/timekills/jdownloader2-for-plexguide.git
-Type the command: git pull origin master
-(Optional) rm -r README.md if you don't want the README file cluttering up your drectory
-Run Plexguide
+1. Go to the /opt/mycontainers directory (cd /opt/mycontainers)
+2. Type the command: git init
+3. Type the command: git remote add origin https://github.com/timekills/jdownloader2-for-plexguide.git
+4. Type the command: git pull origin master
+5. (Optional) rm -r README.md if you don't want the README file cluttering up your drectory
+6. Run Plexguide
+
 Deploy jellyfin app like any other app
