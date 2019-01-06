@@ -1,7 +1,10 @@
 # jdownloader2-for-Plexguide
 Jdownloader2 yml file for installation via Plexguide with Traefik integration
 
-# Alpha - use at own risk. Not tested yet.
+## Username and password version
+
+# Default username plex
+# Defaut password guide
 
 
 #Instructions for a more automated (not copy and paste into jellyfin.yml) approach
