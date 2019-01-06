@@ -54,12 +54,11 @@
     - name: 'Adding Traefik'
       set_fact:
         pg_labels:
-          traefik.frontend.auth.basic: "plex:guide"
           traefik.enable: 'true'
           traefik.port: '{{intport}}'
-
+          traefik.frontend.auth.basic: "plex:guide"
           traefik.frontend.rule: 'Host:{{pgrole}}.{{domain.stdout}},{{tldset}}'
-'      
+
     - name: 'Setting PG Volumes'
       set_fact:
         pg_volumes:
