@@ -41,13 +41,13 @@
     - name: 'Migrations'
       block:
         - name: 'Creating new downloads location'
-          command: 'mkdir -p {{path.stdout}}/downloads/{{pgrole}}'
+          command: 'mkdir -p {{path.stdout}}/incomplete/{{pgrole}}'
 
     - name: 'Chown download folder'
-      shell: 'chown -R 1000:1000 {{path.stdout}}/downloads/{{pgrole}}/'
+      shell: 'chown -R 1000:1000 {{path.stdout}}/incomplete/{{pgrole}}/'
 
     - name: 'Chmod download folder'
-      shell: 'chmod -R 775 {{path.stdout}}/downloads/{{pgrole}}/'
+      shell: 'chmod -R 775 {{path.stdout}}/incomplete/{{pgrole}}/'
 
     - name: 'Ini Check'
       stat:
@@ -71,7 +71,7 @@
           - '/opt/appdata/{{pgrole}}:/config'
           - '{{path.stdout}}:{{path.stdout}}'
           - '/mnt/unionfs:/unionfs'
-          - '{{path.stdout}}/downloads/{{pgrole}}/:/output:rw'
+          - '{{path.stdout}}/incomplete/{{pgrole}}/:/output:rw'
           - '/etc/localtime:/etc/localtime:ro'
 
     - name: 'Setting PG ENV'
