@@ -16,22 +16,16 @@
         pgrole: 'jdownloader2'
         intport: '5800'
         extport: '5800'
-#        intport2: '5902'
-#        extport2: '5902'
-#       intport3: '3129'
-#       extport3: '3129'
+        intport2: '5902'
+        extport2: '5902'
+        intport3: '3129'
+        extport3: '3129'
         image: 'jlesage/jdownloader-2'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
       include_tasks: '/opt/plexguide/containers/_core.yml'
 
-    # MIGRATIONS (REMOVE SECTION ON MARCH 1st) #############################################################
-#    - name: 'Check for old volumes'
-#      stat:
-#        path: '{{path.stdout}}/{{pgrole}}'
-#      register: oldcheck
-#
     # MIGRATIONS (REMOVE SECTION ON MARCH 1st) #############################################################
     - name: 'Check for old volumes'
       stat:
@@ -60,9 +54,10 @@
     - name: 'Adding Traefik'
       set_fact:
         pg_labels:
-          traefik.frontend.auth.basic.users: "{{auth.stdout}}"
+#          traefik.frontend.auth.basic.users: "{{auth.stdout}}"
           traefik.enable: 'true'
           traefik.port: '{{intport}}'
+          traefik.frontend.auth.forward.address: '{{gauth}}'
           traefik.frontend.redirect.entryPoint: "https"
           traefik.frontend.rule: 'Host:{{pgrole}}.{{domain.stdout}},{{tldset}}'
           
