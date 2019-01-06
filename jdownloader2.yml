@@ -16,10 +16,10 @@
         pgrole: 'jdownloader2'
         intport: '5800'
         extport: '5800'
-        intport2: '5902'
-        extport2: '5902'
-        intport3: '3129'
-        extport3: '3129'
+#        intport2: '5902'
+#        extport2: '5902'
+#       intport3: '3129'
+#       extport3: '3129'
         image: 'jlesage/jdownloader-2'
 
     # CORE (MANDATORY) ############################################################
