@@ -4,7 +4,7 @@ Jdownloader2 yml file for installation via Plexguide with Traefik integration
 # Google OAuth version
 
 
-#Instructions for a more automated (not copy and paste into jellyfin.yml) approach
+#Instructions for a more automated (not copy and paste into jdownloader2.yml) approach
 
 1. Go to the /opt/mycontainers directory (cd /opt/mycontainers)
 2. Type the command: git init
