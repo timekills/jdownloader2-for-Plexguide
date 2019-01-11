@@ -1,5 +1,6 @@
 # jdownloader2-for-Plexguide
 Jdownloader2 yml file for installation via Plexguide with Traefik integration
+https://www.timekills.org/pg-apps/
 
 ## Username and password version
 
